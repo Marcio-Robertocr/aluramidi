@@ -1,1 +1,27 @@
-alert('Olá mundo');
+
+function tocaSom (idElementoAudio){                                      
+    document.querySelector(idElementoAudio).play();
+}
+
+/*document.querySelector('.tecla_pom').onclick = tocaSomPom;          
+A primeira parte até os parênteses definem qual botão, o onclick é o formato que será executado e o final está chamando a função*/
+
+
+const listaDeTeclas = document.querySelectorAll('.tecla'); 
+let contador = 0;
+
+while (contador < listaDeTeclas.length){
+
+    const tecla = listaDeTeclas[contador];
+    const instrumento = tecla.classList[1];
+
+    const idAudio = `#som_${instrumento}`;                                 
+    // O idAudio é uma string que será usada para selecionar o elemento de áudio que será tocado quando o botão for clicado
+                                                                            
+
+    tecla.onclick = function(){
+        tocaSom (idAudio);
+    }
+
+    contador = contador + 1;
+} 
