@@ -1,5 +1,5 @@
 
-function tocaSom (idElementoAudio){                                      
+function tocaSom (idElementoAudio){                                           
     document.querySelector(idElementoAudio).play();
 }
 
@@ -8,20 +8,18 @@ A primeira parte até os parênteses definem qual botão, o onclick é o formato
 
 
 const listaDeTeclas = document.querySelectorAll('.tecla'); 
-let contador = 0;
 
-while (contador < listaDeTeclas.length){
+for (let contador = 0; contador < listaDeTeclas.length; contador++){
 
     const tecla = listaDeTeclas[contador];
     const instrumento = tecla.classList[1];
+    const idAudio = `#som_${instrumento}`;          
 
-    const idAudio = `#som_${instrumento}`;                                 
     // O idAudio é uma string que será usada para selecionar o elemento de áudio que será tocado quando o botão for clicado
                                                                             
 
     tecla.onclick = function(){
         tocaSom (idAudio);
     }
-
-    contador = contador + 1;
+  
 } 
