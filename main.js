@@ -1,5 +1,5 @@
 
-function tocaSom (idElementoAudio){                                           
+function tocaSom (idElementoAudio){                                  //o IdElementoAudio é o parâmetro que será passado para a função, ou seja, o elemento que será tocado                   
     document.querySelector(idElementoAudio).play();
 }
 
@@ -7,7 +7,7 @@ function tocaSom (idElementoAudio){
 A primeira parte até os parênteses definem qual botão, o onclick é o formato que será executado e o final está chamando a função*/
 
 
-const listaDeTeclas = document.querySelectorAll('.tecla'); 
+const listaDeTeclas = document.querySelectorAll('.tecla');        //Definição de una constante que armazena uma lista de elementos com a classe tecla
 
 for (let contador = 0; contador < listaDeTeclas.length; contador++){
 
@@ -17,7 +17,7 @@ for (let contador = 0; contador < listaDeTeclas.length; contador++){
 
     // O idAudio é uma string que será usada para selecionar o elemento de áudio que será tocado quando o botão for clicado
                                                                             
-
+    
     tecla.onclick = function(){
         tocaSom (idAudio);
     }
